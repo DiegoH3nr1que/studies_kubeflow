@@ -1,0 +1,13 @@
+version: "3.12"
+services:
+  kind:
+    image: kindest/node:v1.28.0
+    container_name: kubeflow-kind
+    privileged: true
+    network_mode: "bridge"
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - ~/.kube:/root/.kube
+      - ~/.kind:/root/.kind
+    stdin_open: true
+    tty: true
